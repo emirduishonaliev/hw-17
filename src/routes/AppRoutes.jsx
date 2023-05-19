@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Products } from "../pages/Products";
 import { MyCart } from "../pages/MyCart";
 import { MyOrders } from "../pages/MyOrders";
@@ -14,7 +14,7 @@ export const AppRoutes = () => {
       <Route path="/myCart" element={<MyCart />} />
       <Route path="/myOrder" element={<MyOrders />} />
       <Route path="/" index element={<Home />} />
-      <Route path="*" element={<h2>Not Found</h2>} />
+      <Route path="*" element={<Navigate to="/products" />} />
     </Routes>
   );
 };
